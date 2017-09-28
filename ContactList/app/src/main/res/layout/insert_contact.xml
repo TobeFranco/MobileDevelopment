@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="User"
+        android:hint="@string/userLabel"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="29dp"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:hint="Email"
+        android:hint="@string/emailLabel"
         android:layout_marginTop="30dp"
         app:layout_constraintTop_toBottomOf="@+id/txtUser"
         android:layout_marginLeft="-10dp"
@@ -41,7 +41,7 @@
         android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="text"
-        android:hint="Twitter"
+        android:hint="@string/twitterLabel"
         app:layout_constraintLeft_toLeftOf="@+id/txtEmail"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
@@ -53,7 +53,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="phone"
-        android:hint="Phone"
+        android:hint="@string/phoneLabel"
         app:layout_constraintLeft_toLeftOf="@+id/txtTwitter"
         app:layout_constraintTop_toBottomOf="@+id/txtTwitter" />
 
@@ -65,7 +65,7 @@
         android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="date"
-        android:hint="BirthDate"
+        android:hint="@string/BirthdateLabel"
         app:layout_constraintTop_toBottomOf="@+id/txtPhone"
         app:layout_constraintLeft_toLeftOf="@+id/txtPhone" />
 
@@ -73,7 +73,7 @@
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/add_contact"
         android:layout_marginLeft="68dp"
         app:layout_constraintLeft_toLeftOf="@+id/txtBirthDate"
         android:layout_marginTop="39dp"

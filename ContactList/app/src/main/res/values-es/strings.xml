@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ContactList</string>
+    <string name="add_contact" >Agregar Contacto</string>
+    <string name="userLabel">Nombre de Usuario</string>
+    <string name="emailLabel">Correo</string>
+    <string name="twitterLabel">Twitter</string>
+    <string name="phoneLabel">Teléfono</string>
+    <string name="BirthdateLabel">Fecha de Nacimiento</string>
+</resources>

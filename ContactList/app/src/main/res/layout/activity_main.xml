@@ -10,7 +10,7 @@
         android:id="@+id/btnAdd"
         android:layout_width="367dp"
         android:layout_height="71dp"
-        android:text="Add Contact"
+        android:text="@string/add_contact"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"

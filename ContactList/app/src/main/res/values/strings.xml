@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ContactList</string>
+    <string name="add_contact" >Add Contact</string>
+    <string name="userLabel">User Name</string>
+    <string name="emailLabel">Email</string>
+    <string name="twitterLabel">Twitter</string>
+    <string name="phoneLabel">Phone</string>
+    <string name="BirthdateLabel">BirthDate</string>
 </resources>
