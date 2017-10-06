@@ -20,6 +20,11 @@ public class InsertContact extends AppCompatActivity {
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
+
+
                 String user = ((EditText)findViewById(R.id.txtUser)).getText().toString();
                 String email = ((EditText)findViewById(R.id.txtEmail)).getText().toString();
                 String phone = ((EditText)findViewById(R.id.txtPhone)).getText().toString();

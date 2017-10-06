@@ -1,6 +1,11 @@
 package com.tobefranco.contactlist;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView lsview;
     private ArrayList<Contact> contacts;
+    private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 458;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +46,27 @@ public class MainActivity extends AppCompatActivity {
                 return view;
             }
         });
-
+        final Activity activity = this;
         Button btnAgregar = (Button) findViewById(R.id.btnAdd);
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), InsertContact.class);
-                startActivityForResult(intent, 150);
+
+                if(ContextCompat.checkSelfPermission( getApplicationContext(),
+                        Manifest.permission.WRITE_CONTACTS)
+                        != PackageManager.PERMISSION_GRANTED){
+                    //  Should we show an explanation
+                    if(ActivityCompat.shouldShowRequestPermissionRationale(activity,
+                            Manifest.permission.READ_CONTACTS)){
+                        //  Show an explanation to the user explaining why
+                        //  your app need this permission.
+                    }
+                } else {
+                    //  No explanation needed, we can request the permission.
+                    ActivityCompat.requestPermissions(activity,
+                            new String[]{Manifest.permission.READ_CONTACTS},
+                            MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+                }
             }
         });
     }
@@ -58,6 +78,23 @@ public class MainActivity extends AppCompatActivity {
             Contact contact =  (Contact) data.getSerializableExtra("Contact");
             contacts.add(contact);
             ((ArrayAdapter)lsview.getAdapter()).notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+            String permissions[], int grantResults[]){
+        switch (requestCode){
+            case MY_PERMISSIONS_REQUEST_READ_CONTACTS:{
+                //  If request is cancelled, the result arrays are empty
+                if(grantResults.length > 0 &&
+                        grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    Intent intent = new Intent(getApplicationContext(), InsertContact.class);
+                    startActivityForResult(intent, 150);
+                } else{
+                    //Permission denied, boo! Disable functionality.
+                }
+            }
         }
     }
 
