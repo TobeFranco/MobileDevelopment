@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.ivanvega.miprimersqliteandroida.ContactEditor">
+
+    <EditText
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtName"
+        android:inputType="textPersonName"
+        android:hint="@string/nameLabel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <EditText
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtEmail"
+        android:inputType="textEmailAddress"
+        android:hint="@string/emailLabel"
+        app:layout_constraintLeft_toLeftOf="@+id/txtName"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+    <EditText
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTwitter"
+        android:hint="@string/twitterLabel"
+        app:layout_constraintLeft_toLeftOf="@+id/txtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+    <EditText
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPhone"
+        android:inputType="phone"
+        android:hint="@string/phoneLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtTwitter"
+        app:layout_constraintLeft_toLeftOf="@+id/txtTwitter" />
+
+    <EditText
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtBirthDate"
+        android:inputType="date"
+        android:hint="@string/birthDateLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtPhone"
+        app:layout_constraintLeft_toLeftOf="@+id/txtPhone" />
+
+    <Button
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:text="@string/changeDateLabel"
+        android:id="@+id/btnChangeDate"
+        app:layout_constraintTop_toBottomOf="@+id/txtBirthDate"
+        app:layout_constraintLeft_toLeftOf="@+id/txtBirthDate"/>
+
+    <Button
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:text="@string/doneLabel"
+        android:id="@+id/btnDone"
+        app:layout_constraintTop_toBottomOf="@+id/btnChangeDate"
+        app:layout_constraintLeft_toLeftOf="@+id/btnChangeDate"/>
+
+
+</android.support.constraint.ConstraintLayout>
